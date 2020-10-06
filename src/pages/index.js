@@ -1,5 +1,17 @@
 import React from "react"
+import { Link } from "gatsby"
+import Header from "../components/header"
 
 export default function Home() {
-  return <div>I like to eat apples and bananas</div>
+  return (
+  <div>
+    <Link to="/contact/">Contact</Link>
+    <Link to="/about/">About</Link>
+
+    <Header headerText="I like to move it move it"/>
+
+    <p>What a world.</p>
+      <img src="https://source.unsplash.com/random/400x200" alt="" />
+    </div>
+  )
 }

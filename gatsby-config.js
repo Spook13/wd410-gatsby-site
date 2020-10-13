@@ -1,5 +1,7 @@
 module.exports = {
   plugins: [
+
+    // -- gatsby-source-filesystem --
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -22,6 +24,25 @@ module.exports = {
         name: 'images',
         path: '${__dirname}/src/images'
       },
+    },
+
+    // -- gatsby-plugin-mdx --
+    `gatsby-plugin-sharp`, 
+    `gatsby-transformer-sharp`,
+
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extenstions: ['.md', '.mdx'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      }
     },
   ],
 }
